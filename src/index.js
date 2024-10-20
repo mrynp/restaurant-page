@@ -1,5 +1,3 @@
-import "./styles.css";
+import initializeWebsite from "./website";
 
-const test = "HELLO";
-
-console.log(test);
+initializeWebsite();

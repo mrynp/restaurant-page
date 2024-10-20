@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f3eae1;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 56px;
+  font: 11px;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+
+nav button {
+  font-size: 11px;
+  margin: 0 9.02px;
+  padding: 6.798px 0;
+  color: #171717e6;
+  text-transform: uppercase;
+  letter-spacing: 0.99px;
+  font-weight: 500;
+}
+
+header .restaurant-name {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 26px;
+  cursor: default;
+  line-height: 0;
+}
+
+nav button:hover {
+  color: #17171773;
+}
