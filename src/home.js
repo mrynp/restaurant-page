@@ -2,6 +2,7 @@ import food from "./food.jpg";
 import character from "./character.png";
 import woman from "./woman.jpg";
 import pasta from "./pasta.jpg";
+import boodle from "./boodle.png";
 
 function createHome() {
   const home = document.createElement("div");
@@ -66,10 +67,10 @@ function createHome() {
   const menuContent = document.createElement("div");
   menuContent.classList.add("menu-content");
   menuContent.appendChild(createH3("The menu"));
-  menuContent.appendChild(createH2("a full plate, a happy heart"));
+  menuContent.appendChild(createH2("Healthy Bites, Brilliant Minds"));
   menuContent.appendChild(
     createP(
-      "New dishes, same comfort. Our menu evolves, but the warmth and flavors stay timeless."
+      "Every bite brings balance. Our menu combines delicious ingredients with the nourishment your body and mind deserve."
     )
   );
   menuContent.appendChild(createButton("View the menu"));
@@ -78,14 +79,37 @@ function createHome() {
 
   const pastaImage = document.createElement("img");
   pastaImage.src = pasta;
-  pastaImage.classList.add("pasta");
   pastaImage.alt = "Pasta";
 
   menuImage.appendChild(pastaImage);
   menuContainer.appendChild(menuContent);
   menuContainer.appendChild(menuImage);
 
+  const eventContainer = document.createElement("div");
+  eventContainer.classList.add("event-container");
+
+  const eventImage = document.createElement("div");
+  eventImage.classList.add("event-image");
+  const boodleImage = document.createElement("img");
+  boodleImage.src = boodle;
+  boodleImage.alt = "Boodle Fight";
+
+  eventImage.appendChild(boodleImage);
+
+  const eventContent = document.createElement("div");
+  eventContent.classList.add("event-content");
+  eventContent.appendChild(
+    createH4(
+      "Thursday Evenings are Boodle Fight Nights – Gather around for a Filipino-inspired feast, served on banana leaves and meant to be enjoyed with your hands. Indulge in a spread of grilled meats, seafood, rice, and fresh veggies for $30. Perfect for sharing with friends or making new ones over this lively, communal meal."
+    )
+  );
+  eventContent.appendChild(createButton("Learn more"));
+
+  eventContainer.appendChild(eventImage);
+  eventContainer.appendChild(eventContent);
+
   bottomContainer.appendChild(menuContainer);
+  bottomContainer.appendChild(eventContainer);
 
   home.appendChild(topContainer);
   home.appendChild(bottomContainer);

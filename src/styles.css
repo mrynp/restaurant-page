@@ -26,7 +26,7 @@ h1 {
 h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 60px;
-  letter-spacing: 1.8px;
+  letter-spacing: -1.8px;
   padding: 17px;
   font-weight: 500;
   width: 570px;
@@ -177,30 +177,41 @@ p {
   width: 377px;
 }
 
-.menu-container {
+.menu-container,
+.event-container {
   display: flex;
+  justify-content: center;
   flex-direction: row;
-  gap: 210px;
-  padding: 100px;
+  /* gap: 210px; */
+  width: 100%;
 }
 
-.menu-content {
+.menu-content,
+.event-content {
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
+  padding: 100px;
+}
+
+.event-content h4 {
+  /* width: 450px; */
 }
 
 .menu-content p {
   padding-left: 17px;
 }
 
-.menu-content button {
+.bottom-container button {
   margin-left: 17px;
 }
 
-.menu-image {
+.menu-image,
+.event-image {
   width: 50%;
+  padding: 0 140px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -208,10 +219,18 @@ p {
   overflow: hidden;
 }
 
-.menu-image img {
+.menu-image img,
+.event-image img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
   object-position: 50% 50%;
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0;
+  gap: 100px;
 }
