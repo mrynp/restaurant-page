@@ -3,11 +3,20 @@ import character from "./character.png";
 import woman from "./woman.jpg";
 import pasta from "./pasta.jpg";
 import boodle from "./boodle.png";
+import table from "./table.jpg";
 
 function createHome() {
   const home = document.createElement("div");
   home.classList.add("home");
 
+  home.appendChild(createTopContainer());
+  home.appendChild(createBottomContainer());
+  home.appendChild(createSubscription());
+
+  return home;
+}
+
+function createTopContainer() {
   const topContainer = document.createElement("div");
   topContainer.classList.add("top-container");
 
@@ -59,6 +68,10 @@ function createHome() {
   topContainer.appendChild(imgContainer);
   topContainer.appendChild(textContainer);
 
+  return topContainer;
+}
+
+function createBottomContainer() {
   const bottomContainer = document.createElement("div");
   bottomContainer.classList.add("bottom-container");
 
@@ -111,10 +124,58 @@ function createHome() {
   bottomContainer.appendChild(menuContainer);
   bottomContainer.appendChild(eventContainer);
 
-  home.appendChild(topContainer);
-  home.appendChild(bottomContainer);
+  return bottomContainer;
+}
 
-  return home;
+function createSubscription() {
+  const subscriptionContainer = document.createElement("div");
+  subscriptionContainer.classList.add("subscription-container");
+
+  const subscriptionImgContainer = document.createElement("div");
+  subscriptionImgContainer.classList.add("img-container");
+
+  const tableImg = document.createElement("img");
+  tableImg.src = table;
+  subscriptionImgContainer.appendChild(tableImg);
+
+  const formContainer = document.createElement("div");
+  formContainer.classList.add("form-container");
+  formContainer.appendChild(createForm());
+
+  subscriptionContainer.appendChild(subscriptionImgContainer);
+  subscriptionContainer.appendChild(createH3("Subscribe"));
+  subscriptionContainer.appendChild(
+    createH4(
+      "Join the ODIN family! We’ll only pop into your inbox with delicious news and can’t-miss updates."
+    )
+  );
+  subscriptionContainer.appendChild(formContainer);
+
+  return subscriptionContainer;
+}
+
+function createForm() {
+  const form = document.createElement("form");
+
+  const textInput = document.createElement("input");
+  textInput.type = "text";
+  textInput.name = "fullname";
+  textInput.placeholder = "full name";
+
+  const emailInput = document.createElement("input");
+  emailInput.type = emailInput.name = "email";
+  emailInput.placeholder = "Your email";
+
+  form.appendChild(textInput);
+  form.appendChild(emailInput);
+
+  const joinButton = document.createElement("button");
+  joinButton.type = "submit";
+  joinButton.textContent = "Join";
+
+  form.appendChild(joinButton);
+
+  return form;
 }
 
 function createH1(text) {
