@@ -12,6 +12,46 @@ button {
   cursor: pointer;
 }
 
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 51px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 480px;
+  font-weight: 500;
+  padding: 17px;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 60px;
+  letter-spacing: 1.8px;
+  padding: 17px;
+}
+
+h3 {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 13px;
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 0.78px;
+  padding: 17px;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.32px;
+  padding: 17px;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -19,6 +59,11 @@ header {
   font: 11px;
   align-items: center;
   border-bottom: 1px solid #000;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
 }
 
 nav button {
@@ -41,4 +86,80 @@ header .restaurant-name {
 
 nav button:hover {
   color: #17171773;
+}
+
+.content {
+  background-color: #8c7965;
+}
+
+.home {
+  height: 100%;
+  display: flex;
+
+  border-bottom: 1px solid #000;
+}
+
+.home .img-container {
+  width: 50%;
+}
+
+.img-container img {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.home .text-container {
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-container .hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 100px 0;
+  border-bottom: 1px solid #000;
+}
+
+.character {
+  width: 226px;
+  height: auto;
+  margin-top: 40px;
+}
+
+.button {
+  padding: 3px 0;
+  border-bottom: 1px solid #000;
+}
+
+.button:hover {
+  color: #17171773;
+  padding: 3px 0;
+  border-bottom: 1px solid #17171773;
+}
+
+.text-container .about-container {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0;
+  gap: 40px;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-container h1,
+p {
+  padding: 0 60px;
+}
+
+.about-container h4 {
+  padding: 0 120px;
+  margin-top: 30px;
 }
