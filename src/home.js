@@ -1,9 +1,14 @@
 import food from "./food.jpg";
 import character from "./character.png";
+import woman from "./woman.jpg";
+import pasta from "./pasta.jpg";
 
 function createHome() {
   const home = document.createElement("div");
   home.classList.add("home");
+
+  const topContainer = document.createElement("div");
+  topContainer.classList.add("top-container");
 
   const foodImage = document.createElement("img");
   foodImage.src = food;
@@ -13,6 +18,11 @@ function createHome() {
   characterImage.src = character;
   characterImage.classList.add("character");
   characterImage.alt = "Character";
+
+  const womanImage = document.createElement("img");
+  womanImage.src = woman;
+  womanImage.classList.add("woman");
+  womanImage.alt = "Woman";
 
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("img-container");
@@ -38,14 +48,47 @@ function createHome() {
     )
   );
   aboutContainer.appendChild(createButton("Book a table"));
+  aboutContainer.appendChild(womanImage);
 
   const textContainer = document.createElement("div");
   textContainer.classList.add("text-container");
   textContainer.appendChild(heroContainer);
   textContainer.appendChild(aboutContainer);
 
-  home.appendChild(imgContainer);
-  home.appendChild(textContainer);
+  topContainer.appendChild(imgContainer);
+  topContainer.appendChild(textContainer);
+
+  const bottomContainer = document.createElement("div");
+  bottomContainer.classList.add("bottom-container");
+
+  const menuContainer = document.createElement("div");
+  menuContainer.classList.add("menu-container");
+  const menuContent = document.createElement("div");
+  menuContent.classList.add("menu-content");
+  menuContent.appendChild(createH3("The menu"));
+  menuContent.appendChild(createH2("a full plate, a happy heart"));
+  menuContent.appendChild(
+    createP(
+      "New dishes, same comfort. Our menu evolves, but the warmth and flavors stay timeless."
+    )
+  );
+  menuContent.appendChild(createButton("View the menu"));
+  const menuImage = document.createElement("div");
+  menuImage.classList.add("menu-image");
+
+  const pastaImage = document.createElement("img");
+  pastaImage.src = pasta;
+  pastaImage.classList.add("pasta");
+  pastaImage.alt = "Pasta";
+
+  menuImage.appendChild(pastaImage);
+  menuContainer.appendChild(menuContent);
+  menuContainer.appendChild(menuImage);
+
+  bottomContainer.appendChild(menuContainer);
+
+  home.appendChild(topContainer);
+  home.appendChild(bottomContainer);
 
   return home;
 }
@@ -54,6 +97,12 @@ function createH1(text) {
   const h1 = document.createElement("h1");
   h1.textContent = text;
   return h1;
+}
+
+function createH2(text) {
+  const h2 = document.createElement("h2");
+  h2.textContent = text;
+  return h2;
 }
 
 function createH3(text) {
