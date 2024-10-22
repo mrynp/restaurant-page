@@ -71,6 +71,48 @@ function createTopContainer() {
   return topContainer;
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const imgContainer = document.querySelector(".img-container");
+  const textContainer = document.querySelector(".text-container");
+  const topContainer = document.querySelector(".top-container");
+
+  imgContainer.addEventListener("wheel", (event) => {
+    const isScrollingUp = event.deltaY < 0;
+    const isScrollingDown = event.deltaY > 0;
+    const isAtTop = textContainer.scrollTop === 0;
+    const isAtBottom =
+      textContainer.scrollTop + textContainer.clientHeight >=
+      textContainer.scrollHeight;
+
+    // Check the bottom position of the topContainer relative to the viewport
+    const topContainerRect = topContainer.getBoundingClientRect();
+    const isTopContainerBottomAtZero = topContainerRect.bottom <= 0; // Check if the bottom of topContainer is at 0
+
+    // 1. If scrolling up and textContainer isn't at the top, scroll the textContainer up
+    if (isScrollingUp && !isAtTop) {
+      event.preventDefault();
+      textContainer.scrollTop += event.deltaY; // Scroll textContainer up
+      return;
+    }
+
+    // 2. If scrolling up, only allow imgContainer scroll if topContainer is fully at the top (bottom at 0)
+    if (isScrollingUp && isAtTop && isTopContainerBottomAtZero) {
+      return;
+    }
+
+    // 3. If scrolling down and textContainer isn't at the bottom, scroll the textContainer down
+    if (isScrollingDown && !isAtBottom) {
+      event.preventDefault();
+      textContainer.scrollTop += event.deltaY; // Scroll textContainer down
+      return;
+    }
+
+    if (isScrollingDown && isAtBottom) {
+      return;
+    }
+  });
+});
+
 function createBottomContainer() {
   const bottomContainer = document.createElement("div");
   bottomContainer.classList.add("bottom-container");
