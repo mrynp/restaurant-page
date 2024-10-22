@@ -37,7 +37,7 @@ function createFooter() {
   const footer = document.createElement("footer");
 
   const characterContainer = document.createElement("div");
-  characterContainer.classList.add("characterContainer");
+  characterContainer.classList.add("character-container");
 
   const characterImg = document.createElement("img");
   characterImg.src = character;
@@ -65,16 +65,22 @@ function createFooter() {
 
   const details3 = document.createElement("div");
   details3.classList.add("details");
-  details3.appendChild(createP("Instagram"));
-  details3.appendChild(createP("Facebook"));
+  details3.appendChild(createH3("Socials"));
+  details3.appendChild(createButton("Instagram"));
+  details3.appendChild(createButton("Facebook"));
 
   detailsContainer.appendChild(details1);
   detailsContainer.appendChild(details2);
+  detailsContainer.appendChild(details3);
 
   const creditContainer = document.createElement("div");
   creditContainer.classList.add("credit-container");
 
-  creditContainer.appendChild(createH3("@mrynp"));
+  creditContainer.appendChild(
+    createH3("Photos from Unsplash, Pexels and Canva")
+  );
+  creditContainer.appendChild(createH3("Open-sourced on Github"));
+  creditContainer.appendChild(createH3("Made by @mrynp"));
 
   textContainer.appendChild(detailsContainer);
   textContainer.appendChild(creditContainer);
