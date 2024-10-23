@@ -79,8 +79,9 @@ function createFooter() {
   const details2 = document.createElement("div");
   details2.classList.add("details");
   details2.appendChild(createH3("Opening hours"));
-  details2.appendChild(createP("Tuesday - Thursday 4.30pm - 11pm"));
-  details2.appendChild(createP("Friday & Saturday 12pm till late"));
+  details2.appendChild(createP("Tuesday - Thursday: 11am - 10pm"));
+  details2.appendChild(createP("Friday & Saturday: 11pm - 12am"));
+  details2.appendChild(createP("Sunday: 11am - 4pm"));
 
   const details3 = document.createElement("div");
   details3.classList.add("details");
@@ -95,11 +96,12 @@ function createFooter() {
   const creditContainer = document.createElement("div");
   creditContainer.classList.add("credit-container");
 
+  creditContainer.appendChild(createH3("Made for the odin project"));
+  creditContainer.appendChild(createH3("Inspired by Waygood"));
   creditContainer.appendChild(
     createH3("Photos from Unsplash, Pexels and Canva")
   );
-  creditContainer.appendChild(createH3("Open-sourced on Github"));
-  creditContainer.appendChild(createH3("Made by @mrynp"));
+  creditContainer.appendChild(createH3("Coded by mrynp"));
 
   textContainer.appendChild(detailsContainer);
   textContainer.appendChild(creditContainer);
