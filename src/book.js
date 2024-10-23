@@ -20,27 +20,51 @@ function createBook() {
 function createForm() {
   const form = document.createElement("form");
 
-  const textInput = document.createElement("input");
-  textInput.type = "text";
-  textInput.name = "fullname";
-  textInput.placeholder = "full name";
+  const nameLabel = document.createElement("label");
+  nameLabel.for = "fullname";
+  nameLabel.textContent = "Your name";
+
+  const nameInput = document.createElement("input");
+  nameInput.type = "text";
+  nameInput.name = "name";
+  nameInput.placeholder = "Jane Doe";
+
+  const emailLabel = document.createElement("label");
+  emailLabel.for = "email";
+  emailLabel.textContent = "Your email";
 
   const emailInput = document.createElement("input");
   emailInput.type = emailInput.name = "email";
-  emailInput.placeholder = "Your email";
+  emailInput.placeholder = "janedoe@gmail.com";
+
+  const numberLabel = document.createElement("label");
+  numberLabel.for = "number";
+  numberLabel.textContent = "Your phone number";
 
   const numberInput = document.createElement("input");
   numberInput.type = numberInput.name = "number";
-  numberInput.placeholder = "Your number";
+  numberInput.placeholder = "+1 012 345 6789";
+
+  const guestLabel = document.createElement("label");
+  guestLabel.for = "guest";
+  guestLabel.textContent = "Number of guest";
 
   const guestInput = document.createElement("input");
   guestInput.type = "number";
   guestInput.name = "guest";
   guestInput.min = "1";
-  guestInput.placeholder = "Number of guests";
+  guestInput.placeholder = "1";
+
+  const dateLabel = document.createElement("label");
+  dateLabel.for = "date";
+  dateLabel.textContent = "date";
 
   const dateInput = document.createElement("input");
   dateInput.type = numberInput.name = "date";
+
+  const timeLabel = document.createElement("label");
+  timeLabel.for = "time";
+  timeLabel.textContent = "time";
 
   const timeInput = document.createElement("input");
   timeInput.type = timeInput.name = "time";
@@ -48,18 +72,24 @@ function createForm() {
   timeInput.max = "23:00";
   timeInput.value = "11:00";
 
-  form.appendChild(textInput);
+  form.appendChild(nameLabel);
+  form.appendChild(nameInput);
+  form.appendChild(emailLabel);
   form.appendChild(emailInput);
+  form.appendChild(numberLabel);
   form.appendChild(numberInput);
+  form.appendChild(guestLabel);
   form.appendChild(guestInput);
+  form.appendChild(dateLabel);
   form.appendChild(dateInput);
+  form.appendChild(timeLabel);
   form.appendChild(timeInput);
 
-  const joinButton = document.createElement("button");
-  joinButton.type = "submit";
-  joinButton.textContent = "Join";
+  const bookButton = document.createElement("button");
+  bookButton.type = "submit";
+  bookButton.textContent = "Book a table";
 
-  form.appendChild(joinButton);
+  form.appendChild(bookButton);
 
   return form;
 }
