@@ -4,6 +4,14 @@ import woman from "./woman.jpg";
 import pasta from "./pasta.jpg";
 import boodle from "./boodle.png";
 import table from "./table.jpg";
+import {
+  createH1,
+  createH2,
+  createH3,
+  createH4,
+  createP,
+  createButton,
+} from "./index";
 
 function createHome() {
   const home = document.createElement("div");
@@ -218,43 +226,6 @@ function createForm() {
   form.appendChild(joinButton);
 
   return form;
-}
-
-function createH1(text) {
-  const h1 = document.createElement("h1");
-  h1.textContent = text;
-  return h1;
-}
-
-function createH2(text) {
-  const h2 = document.createElement("h2");
-  h2.textContent = text;
-  return h2;
-}
-
-function createH3(text) {
-  const h3 = document.createElement("h3");
-  h3.textContent = text;
-  return h3;
-}
-
-function createH4(text) {
-  const h4 = document.createElement("h4");
-  h4.textContent = text;
-  return h4;
-}
-
-function createP(text) {
-  const p = document.createElement("p");
-  p.textContent = text;
-  return p;
-}
-
-function createButton(text) {
-  const button = document.createElement("button");
-  button.appendChild(createH3(text));
-  button.classList.add("button");
-  return button;
 }
 
 function loadHome() {

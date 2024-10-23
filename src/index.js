@@ -103,37 +103,37 @@ function initializeWebsite() {
   loadHome();
 }
 
-function createH1(text) {
+export function createH1(text) {
   const h1 = document.createElement("h1");
   h1.textContent = text;
   return h1;
 }
 
-function createH2(text) {
+export function createH2(text) {
   const h2 = document.createElement("h2");
   h2.textContent = text;
   return h2;
 }
 
-function createH3(text) {
+export function createH3(text) {
   const h3 = document.createElement("h3");
   h3.textContent = text;
   return h3;
 }
 
-function createH4(text) {
+export function createH4(text) {
   const h4 = document.createElement("h4");
   h4.textContent = text;
   return h4;
 }
 
-function createP(text) {
+export function createP(text) {
   const p = document.createElement("p");
   p.textContent = text;
   return p;
 }
 
-function createButton(text) {
+export function createButton(text) {
   const button = document.createElement("button");
   button.appendChild(createH3(text));
   button.classList.add("button");
