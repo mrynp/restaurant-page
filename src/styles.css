@@ -489,4 +489,5 @@ footer img {
 .menu img {
   width: 600px;
   margin: 40px;
+  border: 1px solid #000;
 }
