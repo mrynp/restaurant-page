@@ -82,6 +82,10 @@ function createForm() {
   bookButton.type = "submit";
   bookButton.textContent = "Book a table";
 
+  bookButton.addEventListener("click", function (event) {
+    event.preventDefault();
+  });
+
   form.appendChild(bookButton);
 
   return form;

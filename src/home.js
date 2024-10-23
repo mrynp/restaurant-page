@@ -242,6 +242,10 @@ function createForm() {
   joinButton.type = "submit";
   joinButton.textContent = "Join";
 
+  joinButton.addEventListener("click", function (event) {
+    event.preventDefault();
+  });
+
   form.appendChild(joinButton);
 
   return form;
