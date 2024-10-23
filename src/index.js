@@ -102,7 +102,7 @@ function initializeWebsite() {
   document.body.appendChild(content);
   document.body.appendChild(createFooter());
 
-  loadBook();
+  loadHome();
 }
 
 export function createH1(text) {
