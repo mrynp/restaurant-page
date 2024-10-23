@@ -60,7 +60,7 @@ function createForm() {
   dateLabel.textContent = "date";
 
   const dateInput = document.createElement("input");
-  dateInput.type = numberInput.name = "date";
+  dateInput.type = dateInput.name = "date";
 
   const timeLabel = document.createElement("label");
   timeLabel.for = "time";
@@ -93,6 +93,30 @@ function createForm() {
 
   return form;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const dateInput = document.querySelector("input[type='date']");
+
+  // Get today's date
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
+  const day = String(today.getDate()).padStart(2, "0");
+
+  // Set the minimum date to today
+  const minDate = `${year}-${month}-${day}`;
+  dateInput.min = minDate;
+
+  // Calculate the date two months from today
+  const maxDate = new Date(today.setMonth(today.getMonth() + 2));
+  const maxYear = maxDate.getFullYear();
+  const maxMonth = String(maxDate.getMonth() + 1).padStart(2, "0");
+  const maxDay = String(maxDate.getDate()).padStart(2, "0");
+
+  // Set the maximum date
+  dateInput.max = `${maxYear}-${maxMonth}-${maxDay}`;
+  dateInput.value = `${year}-${month}-${day}`;
+});
 
 function loadBook() {
   const content = document.getElementById("content");
