@@ -1,11 +1,4 @@
-import {
-  createH1,
-  createH2,
-  createH3,
-  createH4,
-  createP,
-  createButton,
-} from "./index";
+import { createH3, createP } from "./index";
 
 function createBook() {
   const book = document.createElement("div");
@@ -124,4 +117,4 @@ function loadBook() {
   content.appendChild(createBook());
 }
 
-export default loadBook();
+export default loadBook;

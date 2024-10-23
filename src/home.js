@@ -12,6 +12,8 @@ import {
   createP,
   createButton,
 } from "./index";
+import loadMenu from "./menu";
+import loadBook from "./book";
 
 function createHome() {
   const home = document.createElement("div");
@@ -65,6 +67,7 @@ function createTopContainer() {
       "Relax, unwind, and enjoy at your own pace. We’re ready when you are."
     )
   );
+
   aboutContainer.appendChild(createButton("Book a table"));
   aboutContainer.appendChild(womanImage);
 
@@ -75,6 +78,11 @@ function createTopContainer() {
 
   topContainer.appendChild(imgContainer);
   topContainer.appendChild(textContainer);
+
+  const bookButton = aboutContainer.querySelector("button");
+  bookButton.addEventListener("click", () => {
+    loadBook();
+  });
 
   return topContainer;
 }
@@ -167,6 +175,17 @@ function createBottomContainer() {
     )
   );
   eventContent.appendChild(createButton("Learn more"));
+
+  const menuButton = menuContent.querySelector("button");
+  const eventButton = eventContent.querySelector("button");
+
+  menuButton.addEventListener("click", () => {
+    loadMenu();
+  });
+
+  eventButton.addEventListener("click", () => {
+    loadMenu();
+  });
 
   eventContainer.appendChild(eventImage);
   eventContainer.appendChild(eventContent);

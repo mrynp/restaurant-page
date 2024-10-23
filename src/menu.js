@@ -27,10 +27,15 @@ function createMenu() {
   menu3Img.classList.add("menu-img");
   menu3Img.src = menu3;
 
+  const boodleSection = document.createElement("h3");
+  boodleSection.id = "boodle-fight-nights";
+  boodleSection.textContent = "Boodle fight nights";
+
   menu.appendChild(createH3("MENU"));
   menu.appendChild(menu1Img);
   menu.appendChild(menu2Img);
-  menu.appendChild(createH3("Boodle fight nights"));
+  menu.appendChild(boodleSection);
+
   menu.appendChild(menu3Img);
 
   return menu;
@@ -42,4 +47,4 @@ function loadMenu() {
   content.appendChild(createMenu());
 }
 
-export default loadMenu();
+export default loadMenu;

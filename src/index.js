@@ -13,16 +13,27 @@ function createHeader() {
 
   const nav = document.createElement("nav");
   const homeButton = document.createElement("button");
-  const menuButton = document.createElement("button");
-  const bookButton = document.createElement("button");
-
+  homeButton.classList.add("nav-btn");
   homeButton.textContent = "Home";
+
+  const menuButton = document.createElement("button");
+  menuButton.classList.add("nav-btn");
   menuButton.textContent = "Menu";
+
+  const bookButton = document.createElement("button");
+  bookButton.classList.add("nav-btn");
   bookButton.textContent = "Book a table";
 
-  homeButton.addEventListener("click", (e) => {
-    if (e.target.classList.contains("active")) return;
+  homeButton.addEventListener("click", () => {
     loadHome();
+  });
+
+  menuButton.addEventListener("click", () => {
+    loadMenu();
+  });
+
+  bookButton.addEventListener("click", () => {
+    loadBook();
   });
 
   nav.appendChild(homeButton);
@@ -33,6 +44,12 @@ function createHeader() {
   header.appendChild(nav);
 
   return header;
+}
+
+function setActiveButton(button) {
+  const buttons = document.querySelectorAll(".nav-btn");
+  buttons.forEach((btn) => btn.classList.remove("active"));
+  button.classList.add("active");
 }
 
 function createFooter() {
@@ -96,13 +113,14 @@ function createFooter() {
 
 function initializeWebsite() {
   const content = document.getElementById("content");
+
   const header = createHeader();
+  document.body.insertBefore(header, content);
 
-  document.body.appendChild(header);
-  document.body.appendChild(content);
-  document.body.appendChild(createFooter());
+  const footer = createFooter();
+  document.body.appendChild(footer);
 
-  loadBook();
+  loadHome();
 }
 
 export function createH1(text) {
