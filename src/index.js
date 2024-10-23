@@ -1,6 +1,7 @@
 import "./styles.css";
 import loadHome from "./home";
 import loadMenu from "./menu";
+import loadBook from "./book";
 import character from "./character.png";
 
 function createHeader() {
@@ -101,7 +102,7 @@ function initializeWebsite() {
   document.body.appendChild(content);
   document.body.appendChild(createFooter());
 
-  loadMenu();
+  loadBook();
 }
 
 export function createH1(text) {
